@@ -38,6 +38,7 @@ h1 em, h2 em { font-family: var(--serif); font-weight: 400; letter-spacing: -.06
 .intro { max-width: 27rem; font-size: 1.1rem; line-height: 1.65; color: #c6cec7; }
 .primary { display: inline-block; margin-top: 1.9rem; padding: .74rem 1.4rem; background: var(--mint); color: var(--ink); border-radius: .35rem; text-decoration: none; font-weight: 625; }
 .primary:hover { background: #dafbe1; }
+.release-note { margin-top: .65rem; color: var(--soft); font-size: .9rem; }
 .compatibility { color: #b6c4b7; font-size: .8rem; margin-top: 1.1rem; }
 .compatibility span { padding-inline: .3rem; color: #91a394; }
 .viewer { position: relative; min-width: 0; margin: 0; padding: 0; border: 1px solid #506052; background: #18211a; }
