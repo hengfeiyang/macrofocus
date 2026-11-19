@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101713">
+  <meta name="description" content="MacroFocus combines a sequence of macro photographs into a single image with greater depth of field. Explore the focus stacking workflow for Apple silicon Macs.">
+  <meta property="og:title" content="MacroFocus — Focus stacking for Mac">
+  <meta property="og:description" content="Align your focus bracket, combine sharp detail across frames and inspect the result on your Mac.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://hengfeiyang.github.io/macrofocus-website/assets/jewel-beetle.webp">
+  <title>MacroFocus — Focus stacking for Mac</title>
+  <link rel="icon" type="image/png" href="assets/macrofocus.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="brand" href="./" aria-label="MacroFocus home"><img src="assets/macrofocus.png" width="34" height="34" alt="">MacroFocus</a>
+      <nav aria-label="Main"><a href="#workflow">Workflow</a><a href="#specs">Tech specs</a></nav>
+      <a class="support" href="mailto:hengfei.yang+macrofocus@gmail.com">Support</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-layout">
+        <div class="hero-copy">
+          <p class="category"><span aria-hidden="true"></span>Macro photography</p>
+          <h1 id="hero-title">Focus stacking<br><em>for Mac.</em></h1>
+          <p class="intro">Bring the eye, the antenna and the tip of the wing into focus. MacroFocus combines the sharp regions of a sequence of photographs into one image.</p>
+          <a class="primary" href="#workflow">Explore the workflow</a>
+          <p class="compatibility">Apple silicon <span aria-hidden="true">/</span> macOS 26 or later</p>
+        </div>
+
+        <figure class="specimen">
+          <fieldset class="viewer">
+            <legend class="sr-only">Simulated depth of field on a jewel beetle illustration</legend>
+            <input class="sr-only" type="radio" name="focus" id="single" aria-describedby="specimen-caption">
+            <input class="sr-only" type="radio" name="focus" id="stacked" aria-describedby="specimen-caption" checked>
+            <div class="image-window">
+              <img class="beetle" src="assets/jewel-beetle.webp" width="1536" height="1024" fetchpriority="high" alt="A jewel beetle in profile, with a faceted copper eye and finely pitted emerald wing cases.">
+              <div class="defocus" aria-hidden="true"></div>
+              <i class="corner tl" aria-hidden="true"></i><i class="corner tr" aria-hidden="true"></i>
+              <i class="corner bl" aria-hidden="true"></i><i class="corner br" aria-hidden="true"></i>
+            </div>
+            <div class="view-controls">
+              <span class="view-label">Focus preview</span>
+              <div class="switch"><label for="single">Single frame</label><label for="stacked">Stacked</label></div>
+            </div>
+          </fieldset>
+          <figcaption id="specimen-caption"><span>Jewel beetle <i>/</i> Buprestidae</span><span>Simulated illustration</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="workflow" id="workflow" aria-labelledby="workflow-title">
+      <div class="wrap">
+        <h2 id="workflow-title">Inside the workflow</h2>
+        <ol class="stages">
+          <li>
+            <div class="diagram frames" aria-hidden="true"><span></span><span></span><span></span></div>
+            <h3>Import a focus bracket</h3>
+            <p>Drag in a sequence shot at different focus distances. Preview each frame and choose which ones to include.</p>
+          </li>
+          <li>
+            <div class="diagram planes" aria-hidden="true"><span></span><span></span><span></span></div>
+            <h3>Align and stack</h3>
+            <p>MacroFocus aligns the frames. Its default Depth Map method finds detail across focal planes and blends it into a single image.</p>
+          </li>
+          <li>
+            <div class="diagram compare" aria-hidden="true"><span></span></div>
+            <h3>Inspect the detail</h3>
+            <p>At 100% zoom, slide the divider between a source and the result, or compare two renders side by side before exporting.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="specs" id="specs" aria-labelledby="specs-title">
+      <div class="wrap specs-layout">
+        <div><h2 id="specs-title">Technical<br><em>specifications</em></h2>
+          <p>Stack locally in the native Mac app or run a repeatable workflow with the companion command-line tool.</p>
+        </div>
+        <dl>
+          <div><dt>System</dt><dd>Apple silicon Mac running macOS 26 or later</dd></div>
+          <div><dt>Input formats</dt><dd>Sony ARW and DNG, or developed TIFF, JPEG and PNG images</dd></div>
+          <div><dt>Stacking methods</dt><dd>Depth Map by default. Weighted Average and Contrast Pyramid are experimental.</dd></div>
+          <div><dt>Processing</dt><dd>CPU alignment with Metal GPU acceleration available for stacking</dd></div>
+          <div><dt>Export formats</dt><dd>16-bit Adobe RGB TIFF, 32-bit floating-point linear DNG and sRGB JPEG</dd></div>
+        </dl>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-inner">
+    <a class="brand" href="./"><img src="assets/macrofocus.png" width="28" height="28" alt="">MacroFocus</a>
+    <div class="footer-links"><a href="privacy/">Privacy</a><a href="mailto:hengfei.yang+macrofocus@gmail.com">Product support</a></div>
+  </div></footer>
+</body>
+</html>
