@@ -68,18 +68,20 @@
       <h2 id="workflow-title">From bracket to <em>print.</em></h2>
       <ol class="stages">
         <li><div class="diagram frames" aria-hidden="true"><i></i><i></i><i></i></div><h3>Choose your frames</h3><p>Drop in a focus bracket and preview each exposure. Keep the frames that cover your subject.</p></li>
-        <li><div class="diagram planes" aria-hidden="true"><i></i><i></i><i></i></div><h3>Build the stack</h3><p>Align the sequence and blend its sharp regions with Depth Map. The photographs stay on your Mac.</p></li>
+        <li><div class="diagram planes" aria-hidden="true"><i></i><i></i><i></i></div><h3>Build the stack</h3><p>Depth Map blends the sharp regions of each frame. In 1.3.0, alignment automatically corrects slight rotation. If a large crop is needed, you can review the proposed framing before blending.</p></li>
         <li><div class="diagram split" aria-hidden="true"><i></i></div><h3>Check the fine detail</h3><p>Inspect the result at 100% against a source frame, then export a TIFF, DNG or JPEG.</p></li>
       </ol>
     </section>
     <section class="specs" id="specs" aria-labelledby="specs-title">
       <div class="wrap specs-layout">
-        <h2 id="specs-title">Technical<br><em>specifications.</em></h2>
+        <div><p class="eyebrow">Version 1.3.0 preview</p><h2 id="specs-title">Technical<br><em>specifications.</em></h2></div>
         <dl>
           <div><dt>System</dt><dd>Apple silicon Mac · macOS 26 or later</dd></div>
-          <div><dt>Input</dt><dd>Sony ARW, DNG, TIFF, JPEG and PNG</dd></div>
+          <div><dt>Direct input</dt><dd>TIFF, JPEG, PNG, DNG files readable by macOS, and ARW files from the tested Sony ILCE-7M5 capture mode.</dd></div>
+          <div><dt>Other RAW files</dt><dd>Install the free <a href="https://helpx.adobe.com/camera-raw/desktop/dng-and-file-formats/adobe-dng-converter.html">Adobe DNG Converter</a> in Applications. If any RAW frame needs conversion, MacroFocus converts the whole sequence on your Mac. Adjust stacking settings in the same project and it reuses the converted files.</dd></div>
+          <div><dt>Tested cameras</dt><dd>We tested RAW import, stacking and export with the Nikon D750 (NEF), Fujifilm X-T20 (RAF) and Canon EOS R5 Mark II (CR3) using Adobe DNG Converter.</dd></div>
           <div><dt>Stacking</dt><dd>Depth Map by default. Weighted Average and Contrast Pyramid are experimental.</dd></div>
-          <div><dt>Processing</dt><dd>CPU alignment with Metal GPU acceleration available for stacking</dd></div>
+          <div><dt>Processing</dt><dd>Your photos stay on your Mac. The CPU aligns the frames, and Metal GPU acceleration is available for stacking.</dd></div>
           <div><dt>Export</dt><dd>16-bit Adobe RGB TIFF, 32-bit floating-point DNG and sRGB JPEG</dd></div>
         </dl>
       </div>

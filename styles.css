@@ -90,6 +90,7 @@ nav a:hover, .footer-links a:hover { color: white; text-decoration: underline; }
 .split i::after { content: ""; position: absolute; top: -.2rem; bottom: -.2rem; left: 50%; border-left: 2px solid #355c42; }
 .specs { background: #18241d; color: var(--paper); padding-block: clamp(3.5rem, 6vw, 6rem); }
 .specs-layout { align-items: start; }
+.specs .eyebrow { margin-bottom: .8rem; color: var(--faded); }
 .specs h2 em { color: #bdd1b4; }
 dl { border-top: 1px solid #59675b; }
 dl div { display: grid; grid-template-columns: 6.4rem 1fr; gap: 1rem; padding: .9rem 0; border-bottom: 1px solid #455448; }
