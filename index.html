@@ -3,95 +3,93 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101713">
+  <meta name="theme-color" content="#0b110e">
   <meta name="description" content="MacroFocus combines a sequence of macro photographs into a single image with greater depth of field. Explore the focus stacking workflow for Apple silicon Macs.">
-  <meta property="og:title" content="MacroFocus — Focus stacking for Macro">
+  <meta property="og:title" content="MacroFocus — Macro focus stacking for Mac">
   <meta property="og:description" content="Align your focus bracket, combine sharp detail across frames and inspect the result on your Mac.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://hengfeiyang.github.io/macrofocus/assets/jewel-beetle.webp">
-  <title>MacroFocus — Focus stacking for Macro</title>
+  <script src="focus-preview.js" defer></script>
+  <title>MacroFocus — Macro focus stacking for Mac</title>
   <link rel="icon" type="image/png" href="assets/macrofocus.png">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="home">
   <a class="skip" href="#main">Skip to content</a>
   <header class="masthead">
     <div class="wrap masthead-inner">
-      <a class="brand" href="./" aria-label="MacroFocus home"><img src="assets/macrofocus.png" width="34" height="34" alt="">MacroFocus</a>
-      <nav aria-label="Main"><a href="#workflow">Workflow</a><a href="#specs">Tech specs</a></nav>
-      <a class="support" href="https://github.com/hengfeiyang/macrofocus/issues">Support</a>
+      <a class="brand" href="./" aria-label="MacroFocus home"><img src="assets/macrofocus.png" width="36" height="36" alt="">MacroFocus</a>
+      <nav aria-label="Main"><a href="#preview">Focus demo</a><a href="#workflow">Workflow</a><a href="#specs">Tech specs</a></nav>
+      <a class="nav-get" href="#get">Get MacroFocus</a>
     </div>
   </header>
-
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="wrap hero-layout">
+      <figure class="hero-plate">
+        <img src="assets/jewel-beetle.webp" width="1536" height="1024" alt="A jewel beetle up close. Its copper eye is made of tiny facets, and its emerald wing case is dotted with gold." fetchpriority="high">
+        <figcaption><i>Buprestidae</i> · Jewel beetle illustration</figcaption>
+      </figure>
+      <div class="wrap hero-inner">
         <div class="hero-copy">
-          <p class="category"><span aria-hidden="true"></span>Macro photography</p>
-          <h1 id="hero-title">Focus stacking<br> <em>for Macro</em></h1>
-          <p class="intro">Bring the eye, the antenna and the tip of the wing into focus. MacroFocus combines the sharp regions of a sequence of photographs into one image.</p>
-          <a class="primary" href="https://apps.apple.com/app/id6836346236">View on the Mac App Store</a>
-          <p class="release-note">Downloads open when Apple publishes the listing.</p>
-          <p class="compatibility">Apple silicon <span aria-hidden="true">/</span> macOS 26 or later</p>
+          <p class="eyebrow"><span class="stack-mark" aria-hidden="true"></span>Focus stacking for Mac</p>
+          <h1 id="hero-title">Every facet<br><em>in focus.</em></h1>
+          <p class="lead">The curve of an eye. The texture of a wing. Bring sharp details from across your focus bracket into a single photograph.</p>
+          <div class="hero-actions"><a class="button lime" href="#preview">Try the focus demo</a><a class="trial-link" href="#get">30-day export trial</a></div>
         </div>
+      </div>
+    </section>
 
-        <figure class="specimen">
-          <fieldset class="viewer">
-            <legend class="sr-only">Simulated depth of field on a jewel beetle illustration</legend>
-            <input class="sr-only" type="radio" name="focus" id="single" aria-describedby="specimen-caption">
-            <input class="sr-only" type="radio" name="focus" id="stacked" aria-describedby="specimen-caption" checked>
-            <div class="image-window">
-              <img class="beetle" src="assets/jewel-beetle.webp" width="1536" height="1024" fetchpriority="high" alt="A jewel beetle in profile, with a faceted copper eye and finely pitted emerald wing cases.">
-              <div class="defocus" aria-hidden="true"></div>
-              <i class="corner tl" aria-hidden="true"></i><i class="corner tr" aria-hidden="true"></i>
-              <i class="corner bl" aria-hidden="true"></i><i class="corner br" aria-hidden="true"></i>
-            </div>
-            <div class="view-controls">
-              <span class="view-label">Focus preview</span>
-              <div class="switch"><label for="single">Single frame</label><label for="stacked">Stacked</label></div>
-            </div>
+    <section class="lab" id="preview" aria-labelledby="preview-title">
+      <div class="wrap lab-layout">
+        <div class="lab-copy">
+          <p class="eyebrow">Interactive focus study</p>
+          <h2 id="preview-title">Look a little <br><em>closer.</em></h2>
+          <p>One exposure catches a thin slice of the subject. <span id="study-instruction">Compare it with the stacked view to see how detail changes across the beetle.</span></p>
+          <fieldset class="crop-controls" hidden>
+            <legend>Inspect a detail</legend>
+            <label><input type="radio" name="crop" value="eye" checked><span>Compound eye</span></label>
+            <label><input type="radio" name="crop" value="wing"><span>Wing case</span></label>
           </fieldset>
-          <figcaption id="specimen-caption"><span>Jewel beetle <i>/</i> Buprestidae</span><span>Simulated illustration</span></figcaption>
+        </div>
+        <figure class="study" data-crop="eye">
+          <div class="study-window">
+            <div class="crop sharp" role="img" aria-label="Magnified jewel beetle illustration"></div>
+            <div class="before" aria-hidden="true"><div class="crop soft"></div></div>
+            <div class="study-labels" aria-hidden="true"><span>Single frame</span><span>Stacked</span></div>
+            <div class="separator" aria-hidden="true"><span>‹ ›</span></div>
+            <input type="range" class="divider" min="0" max="100" value="42" aria-label="Single-frame portion of focus comparison" aria-describedby="study-caption" disabled>
+          </div>
+          <figcaption id="study-caption"><span>Jewel beetle · <span id="crop-name">Compound eye</span></span><span>Simulated depth of field</span></figcaption>
         </figure>
       </div>
     </section>
 
-    <section class="workflow" id="workflow" aria-labelledby="workflow-title">
-      <div class="wrap">
-        <h2 id="workflow-title">Inside the workflow</h2>
-        <ol class="stages">
-          <li>
-            <div class="diagram frames" aria-hidden="true"><span></span><span></span><span></span></div>
-            <h3>Import a focus bracket</h3>
-            <p>Drag in a sequence shot at different focus distances. Preview each frame and choose which ones to include.</p>
-          </li>
-          <li>
-            <div class="diagram planes" aria-hidden="true"><span></span><span></span><span></span></div>
-            <h3>Align and stack</h3>
-            <p>MacroFocus aligns the frames. Its default Depth Map method finds detail across focal planes and blends it into a single image.</p>
-          </li>
-          <li>
-            <div class="diagram compare" aria-hidden="true"><span></span></div>
-            <h3>Inspect the detail</h3>
-            <p>At 100% zoom, slide the divider between a source and the result, or compare two renders side by side before exporting.</p>
-          </li>
-        </ol>
-      </div>
+    <section id="workflow" class="workflow wrap" aria-labelledby="workflow-title">
+      <h2 id="workflow-title">From bracket to <em>print.</em></h2>
+      <ol class="stages">
+        <li><div class="diagram frames" aria-hidden="true"><i></i><i></i><i></i></div><h3>Choose your frames</h3><p>Drop in a focus bracket and preview each exposure. Keep the frames that cover your subject.</p></li>
+        <li><div class="diagram planes" aria-hidden="true"><i></i><i></i><i></i></div><h3>Build the stack</h3><p>Align the sequence and blend its sharp regions with Depth Map. The photographs stay on your Mac.</p></li>
+        <li><div class="diagram split" aria-hidden="true"><i></i></div><h3>Check the fine detail</h3><p>Inspect the result at 100% against a source frame, then export a TIFF, DNG or JPEG.</p></li>
+      </ol>
     </section>
-
     <section class="specs" id="specs" aria-labelledby="specs-title">
       <div class="wrap specs-layout">
-        <div><h2 id="specs-title">Technical<br><em>specifications</em></h2>
-          <p>The native Mac app processes your photographs locally. Import a bracket, compare renders and export the version you want to keep.</p>
-        </div>
+        <h2 id="specs-title">Technical<br><em>specifications.</em></h2>
         <dl>
-          <div><dt>System</dt><dd>Apple silicon Mac running macOS 26 or later</dd></div>
-          <div><dt>Input formats</dt><dd>Sony ARW and DNG, or developed TIFF, JPEG and PNG images</dd></div>
-          <div><dt>Stacking methods</dt><dd>Depth Map by default. Weighted Average and Contrast Pyramid are experimental.</dd></div>
+          <div><dt>System</dt><dd>Apple silicon Mac · macOS 26 or later</dd></div>
+          <div><dt>Input</dt><dd>Sony ARW, DNG, TIFF, JPEG and PNG</dd></div>
+          <div><dt>Stacking</dt><dd>Depth Map by default. Weighted Average and Contrast Pyramid are experimental.</dd></div>
           <div><dt>Processing</dt><dd>CPU alignment with Metal GPU acceleration available for stacking</dd></div>
-          <div><dt>Export formats</dt><dd>16-bit Adobe RGB TIFF, 32-bit floating-point DNG and sRGB JPEG</dd></div>
-          <div><dt>App Store purchases</dt><dd>Export free for 30 days from first launch. After the trial, choose an annual subscription or a lifetime unlock in the app. Stacking and previews remain available.</dd></div>
+          <div><dt>Export</dt><dd>16-bit Adobe RGB TIFF, 32-bit floating-point DNG and sRGB JPEG</dd></div>
         </dl>
+      </div>
+    </section>
+    <section class="get" id="get" aria-labelledby="get-title">
+      <div class="wrap get-layout">
+        <div><p class="eyebrow">MacroFocus for Mac</p><h2 id="get-title">Try it on <em>your next stack.</em></h2>
+        <p>Export free for 30 days from first launch. After that, choose an annual or lifetime unlock to keep exporting. Stacking and previews stay available.</p></div>
+        <div class="store"><a class="button dark" href="https://apps.apple.com/app/id6836346236">View on the Mac App Store</a>
+        <p>Downloads open when Apple publishes the listing.</p></div>
       </div>
     </section>
   </main>
